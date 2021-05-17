@@ -111,14 +111,14 @@ https://www.scales-chords.com/api/
 
   * Allow user to search for Artist
   * Allow user to choose Song
-  * Get lyrics from lyrics.ovh API and display.
-  * Get link to external tablature on Songsterr API and display the link.
-  * Incorporate modal pop-up for lyrics, tab links, chord diagrams and rhymes.
-  * Implement user text input search for chord diagram and rhymes
+  * Allow user to search for chord diagram and rhyming words.
+  * Incorporate modal pop-up for lyrics, chord diagrams and rhymes.
+  * Get lyrics from lyrics.ovh API and display.* Incorporate modal pop-up for lyrics, chord diagrams and rhymes.
   * Display diagrams and rhymes on the page by embedding the scripts.
   
     
 #### PostMVP  
+  * Get link to external tablature on Songsterr API and display the link.
   * Allow user to write lyrics/chords and save. 
   * hovering over songs displays availability of tablature.
   * once song is chosen, display album art and other metadata from that song
