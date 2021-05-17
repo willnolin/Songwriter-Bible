@@ -104,13 +104,8 @@ https://www.scales-chords.com/api/
 
 ## Wireframes
 
-![alt text](https://res.cloudinary.com/willnolin/image/upload/c_thumb,w_200,g_face/v1621261270/1-Homepage_j2nadf.png "homepage")
+![alt text](https://res.cloudinary.com/willnolin/image/upload/v1621277714/Songwriter_Bible_mc6nwp.png "board")
 
-![alt text](https://res.cloudinary.com/willnolin/image/upload/c_thumb,w_200,g_face/v1621261270/2-After-Search-Artist_sehkzt.png "after-artist-search")
-![alt text](https://res.cloudinary.com/willnolin/image/upload/c_thumb,w_200,g_face/v1621261270/3-After-Song-Click_vb5ndf.png "after-song-click")
-
-![alt-text](https://res.cloudinary.com/willnolin/image/upload/c_thumb,w_200,g_face/v1621261270/4-After-chord-search_qhwfdd.png "after-chord-search")
-![alt-text](https://res.cloudinary.com/willnolin/image/upload/c_thumb,w_200,g_face/v1621261270/5-After-Rhyme-lookup_t7na1u.png "after-rhyme-search")
 
 #### MVP 
 
