@@ -113,7 +113,7 @@ https://www.scales-chords.com/api/
   * Allow user to choose Song
   * Allow user to search for chord diagram and rhyming words.
   * Incorporate modal pop-up for lyrics, chord diagrams and rhymes.
-  * Get lyrics from lyrics.ovh API and display.* Incorporate modal pop-up for lyrics, chord diagrams and rhymes.
+  * Get lyrics from lyrics.ovh API and display.
   * Display diagrams and rhymes on the page by embedding the scripts.
   
     
