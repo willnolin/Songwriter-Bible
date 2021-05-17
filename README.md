@@ -77,7 +77,30 @@ ie. https://api.lyrics.ovh/v1/Queen/We Will Rock You
 
 }
 ```
-All other API fucntinoality will be embedded into the website. (RhymeBrain.com, scales-chords.com/api/)
+All other API functionality will be embedded into the website. (RhymeBrain.com, scales-chords.com/api/)
+
+https://rhymebrain.com/api.html
+
+```html
+<form action="javascript:RhymeBrainSubmit()">
+    <input type=text id="RhymeBrainInput">
+    <input type=submit value="Rhyme">
+</form>
+<script type="text/javascript">
+    var RhymeBrainMaxResults = 50;
+</script>
+<script type="text/javascript" src="https://rhymebrain.com/external.js"></script>
+Rhyme results are provided by <a href="https://rhymebrain.com">RhymeBrain.com</a>
+
+```
+
+https://www.scales-chords.com/api/
+
+```html
+<script async type="text/javascript" src="https://www.scales-chords.com/api/scales-chords-api.js"></script>
+<!-- chord attribute will be taken from user input  -->
+<ins class="scales_chords_api" chord="D#m(maj9)"></ins>
+```
 
 ## Wireframes
 
