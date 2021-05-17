@@ -4,7 +4,7 @@ A tool to help write a song.
 
 ## Project Description
 
-This app will aid in the songwriting process.  User will be able to write in a text area and save progress in the browser.  Other features will include the ability to look up a specific artist's song lyrics for inspiration, a chord diagram search, links to tabs if available and a rhyming dictionary.  
+This app will aid in the songwriting process.  Use will have the ability to look up a specific artist's song lyrics for inspiration, a chord diagram search, links to tabs if available and a rhyming dictionary.  Additionally there will br a text area to jot down ideas.
 
 ## API and Data Sample
 
@@ -143,7 +143,7 @@ https://www.scales-chords.com/api/
 |May 21| Presentations | Incomplete
 
 ## Priority Matrix
-![alt text](https://res.cloudinary.com/willnolin/image/upload/v1621262690/Songwriter-bible-matrix_tlnw2a.png "priority matrix")
+![alt text](https://res.cloudinary.com/willnolin/image/upload/v1621275730/Songwriter-bible-matrix_plz7ju.png "priority matrix")
 
 ## Timeframes
 
