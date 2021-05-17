@@ -113,27 +113,30 @@ https://www.scales-chords.com/api/
 ![alt-text](https://res.cloudinary.com/willnolin/image/upload/c_thumb,w_200,g_face/v1621261270/5-After-Rhyme-lookup_t7na1u.png "after-rhyme-search")
 
 #### MVP 
-  * Allow user to write lyrics/chords and save.
+
   * Allow user to search for Artist
   * Allow user to choose Song
-  * Display song lyrics and tab link on the webpage
-  * Implement user input search for chord diagram and rhymes
-  * Display diagrams and rhymes on the page.
-  * Navigation for several pages or sections
+  * Get lyrics from lyrics.ovh API and display.
+  * Get link to external tablature on Songsterr API and display the link.
+  * Incorporate modal pop-up for lyrics, tab links, chord diagrams and rhymes.
+  * Implement user text input search for chord diagram and rhymes
+  * Display diagrams and rhymes on the page by embedding the scripts.
   
+    
 #### PostMVP  
-  * hovering over songs displays availability of lyrics or tabs
+  * Allow user to write lyrics/chords and save. 
+  * hovering over songs displays availability of tablature.
   * once song is chosen, display album art and other metadata from that song
   * implement button to play chord sound
   * display tablature on the website
-  * allow user to display chord diagrams in song text.
+  * allow user to display chord diagrams in song text. When they type a chord, the chord diagram displays.
 
 ## Project Schedule
 
 |  Day | Deliverable | Status
 |---|---| ---|
 |May 14-16| Prompt / Wireframes / Priority Matrix / Timeframes | Complete
-|May 17| Project Approval / Core Application Structure (HTML,CSS. js) API calls working properly | Incomplete
+|May 17| Project Approval / Core Application Structure (HTML,CSS. js) / API calls working properly | Incomplete
 |May 18| Pseudocode / actual code / functionality / MVP | Incomplete
 |May 19| Style Style Style / Start Post-MVP | Incomplete
 |May 20| Post-MVP| Incomplete
