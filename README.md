@@ -149,20 +149,22 @@ https://www.scales-chords.com/api/
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Working with API | H | 3hrs| | |
-| Set up localstorage for saving text | H | 3hrs | | |
-| Figure out how to display chord diagram | H | 3hrs | | |
-| Integrate lyrics API | H | 3hrs| | |
-| Display Lyrics on the page| H | 3hrs| |  |
-| Integrating user search for lyrics | H | 3hrs| | |
-| Integrating user search for chords and rhymes| H | 3hrs| | |
-| Style search container with flexbox | H | 3hrs | | |
-| Style results containers with flex | H | 3hrs | | |
-| Continue styling pages | H | 3hrs | | |
-| Add extra data on song page | L | 3hrs | | |
-| Display extra data | L | 3hrs | | |
-|Stylize extra data | L | 3hrs | | |
-| Total | H | 39hrs |  | |
+| Getting API data from songsterr and from Lyrics.ovh | H | 3hrs| | |
+| Create Artist search funtionality for songs | H | 3hrs | | |
+| Create Search functionality for Chords and rhymes | H | 3hrs | | |
+| Traversing data to display songs on the songs modal | H | 3hrs | | | 
+| Display chord diagram in chord modal | H | 3hrs | | |
+| Add onclick event listener to each song | H | 3hrs | | |
+| Make API call for lyrics for each song | H | 3hrs| | |
+| Display Lyrics in lyric modal | H | 3hrs| | |
+| Style search container with flexbox | M | 3hrs | | |
+| Style song results modal containers with flex | M | 3hrs | | |
+| Style lyrics results modal | M | 3hrs | | |
+| Style chord results modal | M | 3hrs | | |
+| Style ryhmes results modal | M | 3hrs | | |
+| Continue styling pages | L | 3hrs | | |
+| Deploy on Github Pages | H | 3hrs | | |
+| Total | H | 45hrs |  | |
 
 ## Code Snippet
 
