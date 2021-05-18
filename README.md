@@ -4,7 +4,7 @@ A tool to help write a song.
 
 ## Project Description
 
-This app will aid in the songwriting process.  User will be able to write in a text area and save progress in the browser.  Other features will include the ability to look up a specific artist's song lyrics for inspiration, a chord diagram search, links to tabs if available and a rhyming dictionary.  
+This app will aid in the songwriting process.  Use will have the ability to look up a specific artist's song lyrics for inspiration, a chord diagram search, links to tabs if available and a rhyming dictionary.  Additionally there will br a text area to jot down ideas.
 
 ## API and Data Sample
 
@@ -104,26 +104,21 @@ https://www.scales-chords.com/api/
 
 ## Wireframes
 
-![alt text](https://res.cloudinary.com/willnolin/image/upload/c_thumb,w_200,g_face/v1621261270/1-Homepage_j2nadf.png "homepage")
+![alt text](https://res.cloudinary.com/willnolin/image/upload/v1621277714/Songwriter_Bible_mc6nwp.png "board")
 
-![alt text](https://res.cloudinary.com/willnolin/image/upload/c_thumb,w_200,g_face/v1621261270/2-After-Search-Artist_sehkzt.png "after-artist-search")
-![alt text](https://res.cloudinary.com/willnolin/image/upload/c_thumb,w_200,g_face/v1621261270/3-After-Song-Click_vb5ndf.png "after-song-click")
-
-![alt-text](https://res.cloudinary.com/willnolin/image/upload/c_thumb,w_200,g_face/v1621261270/4-After-chord-search_qhwfdd.png "after-chord-search")
-![alt-text](https://res.cloudinary.com/willnolin/image/upload/c_thumb,w_200,g_face/v1621261270/5-After-Rhyme-lookup_t7na1u.png "after-rhyme-search")
 
 #### MVP 
 
   * Allow user to search for Artist
   * Allow user to choose Song
+  * Allow user to search for chord diagram and rhyming words.
+  * Incorporate modal pop-up for lyrics, chord diagrams and rhymes.
   * Get lyrics from lyrics.ovh API and display.
-  * Get link to external tablature on Songsterr API and display the link.
-  * Incorporate modal pop-up for lyrics, tab links, chord diagrams and rhymes.
-  * Implement user text input search for chord diagram and rhymes
   * Display diagrams and rhymes on the page by embedding the scripts.
   
     
 #### PostMVP  
+  * Get link to external tablature on Songsterr API and display the link.
   * Allow user to write lyrics/chords and save. 
   * hovering over songs displays availability of tablature.
   * once song is chosen, display album art and other metadata from that song
@@ -143,19 +138,19 @@ https://www.scales-chords.com/api/
 |May 21| Presentations | Incomplete
 
 ## Priority Matrix
-![alt text](https://res.cloudinary.com/willnolin/image/upload/v1621262690/Songwriter-bible-matrix_tlnw2a.png "priority matrix")
+![alt text](https://res.cloudinary.com/willnolin/image/upload/v1621275730/Songwriter-bible-matrix_plz7ju.png "priority matrix")
 
 ## Timeframes
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Getting API data from songsterr and from Lyrics.ovh | H | 3hrs| | |
-| Create Artist search funtionality for songs | H | 3hrs | | |
+| Getting API data from songsterr and from Lyrics.ovh | H | 3hrs| 3hrs| 3hrs|
+| Create Artist search funtionality for songs | H | 3hrs | 2hrs | 2hrs|
 | Create Search functionality for Chords and rhymes | H | 3hrs | | |
-| Traversing data to display songs on the songs modal | H | 3hrs | | | 
+| Traversing data to display songs on the songs modal | H | 3hrs | 2hrs | 2hrs | 
 | Display chord diagram in chord modal | H | 3hrs | | |
-| Add onclick event listener to each song | H | 3hrs | | |
-| Make API call for lyrics for each song | H | 3hrs| | |
+| Add onclick event listener to each song | H | 3hrs | 2.5hrs | 2.5hrs |
+| Make API call for lyrics for each song | H | 3hrs| 3 hrs | 3hrs |
 | Display Lyrics in lyric modal | H | 3hrs| | |
 | Style search container with flexbox | M | 3hrs | | |
 | Style song results modal containers with flex | M | 3hrs | | |

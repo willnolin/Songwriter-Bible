@@ -52,7 +52,7 @@ rhymeSearchBtn.addEventListener('click', () => {
 
 
 // When the user clicks on (x), close the modal, clear inputs
-span.onclick = function() {
+span.onclick = function () {
   modal.style.display = "none";
   artist.value = ""
   chord.value = ""
@@ -60,7 +60,7 @@ span.onclick = function() {
 }
 
 // When the user clicks anywhere outside of the modal, close it, clear inputs
-window.onclick = function(event) {
+window.onclick = function (event) {
   if (event.target == modal) {
     modal.style.display = "none";
     artist.value = ""
@@ -79,15 +79,15 @@ const getArtistSongs = async () => {
     const res = await axios.get(url)
     const data = res.data
     console.log(data)
-    if (data.length === 0 ) {   //check if results exist in database
+    if (data.length === 0) {   //check if results exist in database
       modalInnerDiv.textContent = `Sorry, There are no results for ${artist.value}...`
-      
+
 
     } else {    // sort and display songs
       let sortedSongs = sortSongs(data)
       displaySongs(sortedSongs, artist)
     }
- 
+
   } catch (error) {
     console.error(error)
   }
@@ -95,33 +95,33 @@ const getArtistSongs = async () => {
 
 //function to display songs
 const displaySongs = (songs, artist) => {
-  
+
   //declare variables for list and list items
   const songList = document.createElement('ul')
-  
+
   //loop through songs array forEach song
   songs.forEach(function (song) {
-    
+
     //const song_url = (`http://www.songsterr.com/a/wa/song?id=${song.id}`)
     const songTitleTag = document.createElement('li')
-    
+
     songTitleTag.textContent = song.title
-    
-     //add event listener for each link
+
+    //add event listener for each link
     songTitleTag.addEventListener('click', function () {
-    
+
       removeSongs()
       getLyrics(song.title)
-     
+
     })
     //append song titles to song list
     songList.append(songTitleTag)
     //add songList as value inside text area
   })
-  
+
   //append song list to the div after for loop
   modalInnerDiv.appendChild(songList)
- 
+
 }
 
 //sort the song titles in alphabetical order
@@ -149,26 +149,26 @@ const getLyrics = async (song) => {
     const res = await axios.get(lyric_url)
     // console.log(res)
     const lyrics = res.data.lyrics
-    
+
     displayLyrics(lyrics)
-    
+
   } catch (error) {
-    
+
     noResultsPTag.textContent = `Sorry, There are no results for ${song}...`
     modalInnerDiv.append(noResultsPTag)
     console.error(error)
-    
+
   }
 }
 
 //Format and append to DOM
 function displayLyrics(lyrics) {
-  
+
   //add lyrics into div
   lyricsPTag.textContent = `${lyrics}`
   lyricsPTag.style.whiteSpace = 'pre';
   //append lyricsPTag to  Modal
- 
+
   modalInnerDiv.append(lyricsPTag)
 }
 
@@ -189,7 +189,7 @@ const displayChords = () => {
   // script.type = 'text/javascript';
   // script.src = 'https://www.scales-chords.com/api/scales-chords-api.js';    
   // document.getElementsByTagName('head')[0].appendChild(script);
-  
+
   // chordTag.classList.add('scales_chords_api')
   chordTag.setAttribute('chord', `"${chord.value}"`)
   console.log(chordTag)
@@ -203,7 +203,7 @@ const displayChords = () => {
 //=================Rhymes ===========//
 const getRhymes = async () => {
   try {
-    
+
     const rhyme_url = (`https://rhymebrain.com/talk?function=getRhymes&word=${wordInput.value}&maxResults=30`)
     const res = await axios.get(rhyme_url)
     const data = res.data
@@ -212,7 +212,7 @@ const getRhymes = async () => {
 
   } catch (error) {
     console.error(error)
-    
+
   }
 }
 // Display The rhymes in the Modal
@@ -223,7 +223,7 @@ const displayRhymes = (words) => {
   rhymesDiv.append(`Words that rhyme with ${wordInput.value}`)
   //loops through data and display words
   words.forEach(word => {
-    const wordItem = document.createElement('h4') 
+    const wordItem = document.createElement('h4')
     if (words.indexOf(word) == 20) {
       rhymesDiv.append(`Consider using there near-rhymes or slant-rhymes`)
     }
@@ -231,7 +231,7 @@ const displayRhymes = (words) => {
 
     rhymesDiv.append(wordItem)
   })
-  rhymesDiv.insertAdjacentHTML('beforeend',`Rhyme results are provided by ${brainURL}`)
+  rhymesDiv.insertAdjacentHTML('beforeend', `Rhyme results are provided by ${brainURL}`)
   modalInnerDiv.appendChild(rhymesDiv)
 
 }
