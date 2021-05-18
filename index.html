@@ -4,9 +4,11 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script type="text/javascript" src="https://www.scales-chords.com/api/scales-chords-api.js" async></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Playfair+Display+SC:wght@900&display=swap" rel="stylesheet">  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="scales-chords.js"></script>
   <script defer src="script.js" charset="utf-8"></script>
+  <!-- <script async type="text/javascript" src="https://www.scales-chords.com/api/scales-chords-api.js"></script> -->
   <link rel="stylesheet" href="style.css" type="text/css" charset="utf-8">
   <title>Songwriter Bible</title>
 </head>
@@ -19,22 +21,27 @@
         
       <!-- lyrics search by artist -->
       <div class='row'>
-        <label for="artist">Get Inspired - </label>
+        <label for="artist" id="infoA">Get Inspired - </label>
           <input type="text" id="artist" placeholder="artist name here" autofocus>
           <button class="button" id="artist_button">Lyrics</button>
       </div>
       
       <!-- chord diagram search by chord name   -->
       <div class='row'>
-        <label for="chord">Learn a Chord - </label>
-          <input type="text" id="chord" placeholder="chord name here">
-          <button class="button" id="chord_button">Chords</button>
+        <label for="chord" id="infoB">Learn a Chord - </label>
+        <input type="text" id="chord" placeholder="chord name here">
+        <button class="button" id="chord_button">Chords</button>
+        <!-- <div class="hover-info">
+          <p> use this format: 
+            <br> F_maj7, Bb_m7, C_m7b5, ..etc
+          </p>
+        </div> -->
       </div>
       
       <!-- search for rhyming words -->
       <div class='row'>
         
-        <label for="rhyme">Find a Rhyme - </label>
+        <label for="rhyme" id = "infoC">Find a Rhyme - </label>
           <input type="text" id="rhyme" placeholder="word to rhyme here">
           <button class="button" id="rhyme_button">Rhyme</button>
        
@@ -42,21 +49,23 @@
     
     </section>
     <section id="main-content">
+      
       <!-- The Modal -->
       <div id="myModal" class="modal">
-
+        
         <!-- Modal content -->
         <div class="modal-content">
           <span class="close">&times;</span>
           <div id="inside-modal"> <!---  This is what will change depending on event onclick-->
+            
+            
           </div> 
-            <ins class="scales_chords_api"></ins> <!--try str with html and insertAdjacent -->
+          <ins class="scales_chords_api"></ins>
         </div>
 
       </div>
 
     </section>
   </div>
- 
 </body>
 </html>
