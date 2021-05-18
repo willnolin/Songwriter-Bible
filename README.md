@@ -144,13 +144,13 @@ https://www.scales-chords.com/api/
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Getting API data from songsterr and from Lyrics.ovh | H | 3hrs| | |
-| Create Artist search funtionality for songs | H | 3hrs | | |
+| Getting API data from songsterr and from Lyrics.ovh | H | 3hrs| 3hrs| 3hrs|
+| Create Artist search funtionality for songs | H | 3hrs | 2hrs | 2hrs|
 | Create Search functionality for Chords and rhymes | H | 3hrs | | |
-| Traversing data to display songs on the songs modal | H | 3hrs | | | 
+| Traversing data to display songs on the songs modal | H | 3hrs | 2hrs | 2hrs | 
 | Display chord diagram in chord modal | H | 3hrs | | |
-| Add onclick event listener to each song | H | 3hrs | | |
-| Make API call for lyrics for each song | H | 3hrs| | |
+| Add onclick event listener to each song | H | 3hrs | 2.5hrs | 2.5hrs |
+| Make API call for lyrics for each song | H | 3hrs| 3 hrs | 3hrs |
 | Display Lyrics in lyric modal | H | 3hrs| | |
 | Style search container with flexbox | M | 3hrs | | |
 | Style song results modal containers with flex | M | 3hrs | | |
