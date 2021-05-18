@@ -151,7 +151,7 @@ https://www.scales-chords.com/api/
 | Display chord diagram in chord modal | H | 3hrs | | |
 | Add onclick event listener to each song | H | 3hrs | 2.5hrs | 2.5hrs |
 | Make API call for lyrics for each song | H | 3hrs| 3 hrs | 3hrs |
-| Display Lyrics in lyric modal | H | 3hrs| | |
+| Display Lyrics in lyric modal | H | 3hrs| 2.5hrs | |
 | Style search container with flexbox | M | 3hrs | | |
 | Style song results modal containers with flex | M | 3hrs | | |
 | Style lyrics results modal | M | 3hrs | | |
