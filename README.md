@@ -131,8 +131,8 @@ https://www.scales-chords.com/api/
 |  Day | Deliverable | Status
 |---|---| ---|
 |May 14-16| Prompt / Wireframes / Priority Matrix / Timeframes | Complete
-|May 17| Project Approval / Core Application Structure (HTML,CSS. js) / API calls working properly | Incomplete
-|May 18| Pseudocode / actual code / functionality / MVP | Incomplete
+|May 17| Project Approval / Core Application Structure (HTML,CSS. js) / API calls working properly | Complete
+|May 18| Pseudocode / actual code / functionality / MVP | Complete
 |May 19| Style Style Style / Start Post-MVP | Incomplete
 |May 20| Post-MVP| Incomplete
 |May 21| Presentations | Incomplete
@@ -146,17 +146,17 @@ https://www.scales-chords.com/api/
 | --- | :---: |  :---: | :---: | :---: |
 | Getting API data from songsterr and from Lyrics.ovh | H | 3hrs| 3hrs| 3hrs|
 | Create Artist search funtionality for songs | H | 3hrs | 2hrs | 2hrs|
-| Create Search functionality for Chords and rhymes | H | 3hrs | | |
+| Create Search functionality for Chords and rhymes | H | 3hrs | 4hrs | 4hrs |
 | Traversing data to display songs on the songs modal | H | 3hrs | 2hrs | 2hrs | 
-| Display chord diagram in chord modal | H | 3hrs | | |
+| Display chord diagram in chord modal | H | 3hrs | 7hrs | 7hrs |
 | Add onclick event listener to each song | H | 3hrs | 2.5hrs | 2.5hrs |
 | Make API call for lyrics for each song | H | 3hrs| 3 hrs | 3hrs |
 | Display Lyrics in lyric modal | H | 3hrs| 2.5hrs | |
-| Style search container with flexbox | M | 3hrs | | |
-| Style song results modal containers with flex | M | 3hrs | | |
+| Style search container with flexbox | M | 3hrs | 2hrs | |
+| Style song results modal containers with flex | M | 3hrs | 3hrs | |
 | Style lyrics results modal | M | 3hrs | | |
 | Style chord results modal | M | 3hrs | | |
-| Style ryhmes results modal | M | 3hrs | | |
+| Style rhymes results modal | M | 3hrs | | |
 | Continue styling pages | L | 3hrs | | |
 | Deploy on Github Pages | H | 3hrs | | |
 | Total | H | 45hrs |  | |
