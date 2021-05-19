@@ -118,12 +118,13 @@ https://www.scales-chords.com/api/
   
     
 #### PostMVP  
-  * Get link to external tablature on Songsterr API and display the link.
+  * Add prompts that appear when hovering over labels.
+  * Add "loading.." notification in Modal when fetching data
   * Allow user to write lyrics/chords and save. 
   * hovering over songs displays availability of tablature.
   * once song is chosen, display album art and other metadata from that song
-  * implement button to play chord sound
-  * display tablature on the website
+  * add option to hear chord sound in chord modal
+  * display tablature link on the website in songs Modal
   * allow user to display chord diagrams in song text. When they type a chord, the chord diagram displays.
 
 ## Project Schedule
