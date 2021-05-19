@@ -20,36 +20,50 @@
     <section id='search-container'>
         
       <!-- lyrics search by artist -->
-      <div class='row'>
-        <label for="artist" id="infoA">Get Inspired - </label>
+      <form class="row lyrics-form">
+        <label for="artist" id="infoA">Get Inspired - 
+          <div id="hover-infoA">
+            <p> Search for songs: 
+              <br> Click a song to 
+              <br> search for lyrics
+            </p>
+          </div>
+        </label>
           <input type="text" id="artist" placeholder="artist name here" autofocus>
           <button class="button" id="artist_button">Lyrics</button>
-      </div>
+      </form>
       
       <!-- chord diagram search by chord name   -->
-      <div class='row'>
-        <label for="chord" id="infoB">Learn a Chord - </label>
+      <form class="row chord-form">
+        <label for="chord" id="infoB">Learn a Chord - 
+          
+          <div id="hover-infoB">
+            <p> example format: 
+              <br> Fmaj7, C#m7(maj9)
+              <br> Bb ..etc
+            </p>
+          </div>
+          
+        </label>
         <input type="text" id="chord" placeholder="chord name here">
         <button class="button" id="chord_button">Chords</button>
-        <!-- <div class="hover-info">
-          <p> use this format: 
-            <br> F_maj7, Bb_m7, C_m7b5, ..etc
-          </p>
-        </div> -->
-      </div>
+      </form>
       
       <!-- search for rhyming words -->
-      <div class='row'>
+      <form class="row rhyme-form">
         
         <label for="rhyme" id = "infoC">Find a Rhyme - </label>
           <input type="text" id="rhyme" placeholder="word to rhyme here">
           <button class="button" id="rhyme_button">Rhyme</button>
        
-      </div>
+      </form>
     
     </section>
     <section id="main-content">
-      
+      <textarea id="writing-area">
+
+      </textarea>
+      <!-- <button type="button" onclick="saveStaticDataToFile();">Click to Save</button> -->
       <!-- The Modal -->
       <div id="myModal" class="modal">
         
@@ -60,7 +74,9 @@
             
             
           </div> 
-          <ins class="scales_chords_api"></ins>
+          <div id="modal-chord-div">
+            <ins class="scales_chords_api"></ins>
+          </div>  
         </div>
 
       </div>

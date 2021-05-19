@@ -64,15 +64,29 @@ label {
   justify-content: space-between;
 }
 
+
 .row {
-  margin: 20px
+  margin: 10px
 }
 
 #infoA  {
 cursor: pointer;
 }
 
-#infoB:hover + .hover-info{
+#infoA:hover > #hover-infoA{
+  cursor: pointer;
+  display: "block";
+  transition: .5s;
+  background-color: rgb(256,256,256);
+  color: rgb(0,0,0)
+}
+
+#infoB  {
+  cursor: pointer;
+}
+
+
+#infoB:hover > #hover-infoB{
   cursor: pointer;
   display: "block";
   transition: .5s;
@@ -81,35 +95,53 @@ cursor: pointer;
 }
 
 #infoC {
-cursor: pointer;
+  cursor: pointer;
 }
 
-.hover-info {
-  position: absolute;
-  top:100px;
-  left:50px;
-  color: #ffffff;
-}
-.hover-info p {
+#hover-infoA{
+  position: absolute; 
   display: "none";
   transition: 1s; 
+  font-size: 15px;
+  top:100px;
+  left:100px;
+  color: rgba(256,256,156,0);
+  overflow: hidden;
+  padding: 10px;
+  border-radius: 60px;
 }
 
+#hover-infoB{
+  position: absolute; 
+  display: "none";
+  transition: 1s; 
+  font-size: 15px;
+  top:200px;
+  left:100px;
+  color: rgba(256,256,156,0);
+  overflow: hidden;
+  padding: 10px;
+  border-radius: 60px;
+}
+
+li {
+  cursor: pointer;
+}
 /* --------------------the MODAL styling -------------------  */
 /* inital code from w3cschools.com
 /* The Modal (background) */
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  padding-top: 100px;
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  width: 100%;
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
   
 }
 ul {
@@ -121,18 +153,29 @@ li {
  list-style-type: none;
 
 }
-/* iframe {
 
-  height:450px;
-  width:300px
+textarea {
+  display:flex;
+  justify-content: center;
+  margin : 10px auto;
+  height: 300px;
+  width: 65%;
+  border-radius: 10px;
+}
 
-} */
 /* Modal Content */
 .modal-content {
-  background-color: #fefefe;
+  /* code adapted from cssgradient.io */
+  /* background-color: #fefefe; */
+  background: rgb(114,105,83);
+  background: -moz-linear-gradient(90deg, rgba(114,105,83,0) 0%, rgba(114,105,83,1) 25%, rgba(235,232,156,1) 50%, rgba(114,105,83,1) 75%, rgba(114,105,80,0) 100%);
+  background: -webkit-linear-gradient(90deg, rgba(114,105,83,0) 0%, rgba(114,105,83,1) 25%, rgba(235,232,156,1) 50%, rgba(114,105,83,1) 75%, rgba(114,105,80,0) 100%);
+  background: linear-gradient(90deg, rgba(114,105,83,0) 0%, rgba(114,105,83,1) 25%, rgba(235,232,156,1) 50%, rgba(114,105,83,1) 75%, rgba(114,105,80,0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#726953",endColorstr="#726950",GradientType=1);
+/* box-shadow: 25px 25px 50px 0 white inset, -25px -25px 50px 0 white inset;    */
   margin: auto;
   padding: 20px;
-  border: 1px solid #888;
+  /* border: 1px solid #888; */
   width: 80%;
 }
 
@@ -145,9 +188,9 @@ li {
   padding: 2px;
   margin: 0 auto;
 }
-.rhymes {
+/* .rhymes {
   display: none;
-}
+} */
 /* The Close Button */
 .close {
   color: #aaaaaa;

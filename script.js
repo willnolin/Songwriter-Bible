@@ -1,22 +1,23 @@
+// import { saveAs } from 'file-saver';
 //=============GLOBAL VARIABLES ====================//
 const BASE_URL = "http://www.songsterr.com/a/ra/songs.json?pattern="
 
 const artist = document.querySelector('#artist') //<----artist input
-const artistSearchBtn = document.querySelector('#artist_button') // <----artist search button
+const artistForm = document.querySelector('.lyrics-form') // <----artist search button
 
 // const chord = document.querySelector('#chord') // <-----chord input
-const chordSearchBtn = document.querySelector('#chord_button')//<----chord search button
-const chordDiv = document.createElement('div') // <------chord div containing iframe
+const chordForm = document.querySelector('.chord-form')//<----chord search button
+const chordDiv = document.querySelector('#modal-chord-div') // <------chord div containing iframe
 
 // chordDiv.classList.add('chord-div')
 
 const wordInput = document.querySelector('#rhyme') // <-----word to rhyme input
-const rhymeSearchBtn = document.querySelector('#rhyme_button')//<----rhyme search button
+const rhymeForm = document.querySelector('.rhyme-form')//<----rhyme search button
 // const rhymesDiv = document.createElement('div')   // <------div containing rhymes
 // const brainURLTag = document.createElement('a')
 // p tag for lyrics
-const lyricsPTag = document.createElement('p') // <----need to style, make space between lines consistent
-
+const lyricsPTag = document.createElement('p.lyrics') // <----need to style, make space between lines consistent
+// lyricsPTag.classList.add('lyrics')
 
 const mainDiv = document.querySelector('#main-content')
 //ins tag for chord diagram
@@ -38,19 +39,25 @@ const noResultsPTag = document.createElement('p')
 // ===MODAL FUNCTIONALITY===//
 
 // When the user clicks the button, open the modal, fill MODAL with content
-artistSearchBtn.addEventListener('click', () => {
+artistForm.addEventListener('submit', (e) => {
+  e.preventDefault()
+  // removeChords()
   clearAll()
   getArtistSongs()
   modal.style.display = "block"
 })
 
-chordSearchBtn.addEventListener('click', () => {
+chordForm.addEventListener('submit', (e) => {
+  e.preventDefault()
+  // removeChords()
   clearAll()
   displayChords()
   modal.style.display = "block"
 })
 
-rhymeSearchBtn.addEventListener('click', () => {
+rhymeForm.addEventListener('submit', (e) => {
+  e.preventDefault()
+  // removeChords()
   clearAll()
   getRhymes()
   modal.style.display = "block"
@@ -84,7 +91,7 @@ const getArtistSongs = async () => {
     const url = (`${BASE_URL}${artist.value}`)
     const res = await axios.get(url)
     const data = res.data
-    // console.log(data)
+ 
     if (data.length === 0) {   //check if results exist in database
       noResultsPTag.textContent = `Sorry, There are no results for ${artist.value}...`
       modalInnerDiv.append(noResultsPTag)
@@ -108,16 +115,17 @@ const displaySongs = (songs, artist) => {
   //loop through songs array forEach song
   songs.forEach(function (song) {
 
-    //const song_url = (`http://www.songsterr.com/a/wa/song?id=${song.id}`)
+    //get artist name for search
+    const artistName = song.artist.name
     const songTitleTag = document.createElement('li')
-
+    console.log(artistName)
     songTitleTag.textContent = song.title
 
     //add event listener for each link
     songTitleTag.addEventListener('click', function () {
 
       removeSongs()
-      getLyrics(song.title)
+      getLyrics(song.title, artistName)
 
     })
     //append song titles to song list
@@ -147,10 +155,10 @@ function removeSongs() {
 
 //===================LYRICS===========================//
 // //API call
-const getLyrics = async (song) => {
+const getLyrics = async (song, artistName) => {
   try {
     // const url = ("https://api.lyrics.ovh/v1/queen/bohemian rhapsody")
-    const lyric_url = (`https://api.lyrics.ovh/v1/${artist.value}/${song}`) // <--figure out value
+    const lyric_url = (`https://api.lyrics.ovh/v1/${artistName}/${song}`) 
     // const url = (`https://api.lyrics.ovh/v1/${artist}`)
     const res = await axios.get(lyric_url, { timeout: 20000 })
     const obj = res.data
@@ -187,8 +195,8 @@ function removeLyrics() {
 // =============== CHORDS =======================//
 
 const displayChords = async () => {
-  // const chordDiv = document.createElement('div') // <------chord div containing iframe
-
+  // const chordDiv = document.querySelector('#modal-chord-div') // <------chord div containing
+  console.log(chordDiv)
   // chordDiv.classList.add('chord-div')
   
   const chord = document.querySelector('#chord') // <-----chord input
@@ -198,7 +206,14 @@ const displayChords = async () => {
   chordTag.setAttribute('chord', chord.value)
   
   await scales_chords_api_onload()
+  
 
+}
+
+function removeChords() {
+  while (chordDiv.lastChild) {
+    chordDiv.removeChild(chordDiv.lastChild)
+  }
 }
 
 //===============Uber Chords ================//
@@ -232,14 +247,15 @@ const getRhymes = async () => {
   try {
 
     const rhyme_url = (`https://rhymebrain.com/talk?function=getRhymes&word=${wordInput.value}&maxResults=30`)
-    const res = await axios.get(rhyme_url)
+    const res = await axios.get(rhyme_url, {timeout:10000})
     const data = res.data
     console.log(data)
     displayRhymes(data)
 
   } catch (error) {
     console.error(error)
-
+    noResultsPTag.textContent = `Sorry, We're having a hard time finding rhymes for ${wordInput.value} right now...`
+    modalInnerDiv.append(noResultsPTag)
   }
 }
 // Display The rhymes in the Modal
@@ -274,7 +290,11 @@ function removeRhymes() {
 //clears all from Modal
 
 function clearAll() {
-  while (modalInnerDiv.lastChild) {
-    modalInnerDiv.removeChild(modalInnerDiv.lastChild)
-  }
+  // while (modalInnerDiv.lastChild) {
+    // modalInnerDiv.removeChild(modalInnerDiv.lastChild)
+  // }
+  modalInnerDiv.innerHTML = ""
+
+  const chordTag = document.querySelector('ins')
+  chordTag.innerHTML = ""
 }
