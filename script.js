@@ -8,7 +8,7 @@ const artistSearchBtn = document.querySelector('#artist_button') // <----artist 
 const chordSearchBtn = document.querySelector('#chord_button')//<----chord search button
 const chordDiv = document.createElement('div') // <------chord div containing iframe
 
-chordDiv.classList.add('chord-div')
+// chordDiv.classList.add('chord-div')
 
 const wordInput = document.querySelector('#rhyme') // <-----word to rhyme input
 const rhymeSearchBtn = document.querySelector('#rhyme_button')//<----rhyme search button
@@ -46,9 +46,6 @@ artistSearchBtn.addEventListener('click', () => {
 
 chordSearchBtn.addEventListener('click', () => {
   clearAll()
-  
-  // getUberChord()
-
   displayChords()
   modal.style.display = "block"
 })
@@ -190,13 +187,16 @@ function removeLyrics() {
 // =============== CHORDS =======================//
 
 const displayChords = async () => {
- 
+  // const chordDiv = document.createElement('div') // <------chord div containing iframe
+
+  // chordDiv.classList.add('chord-div')
+  
   const chord = document.querySelector('#chord') // <-----chord input
 
-  // const chordTag = document.querySelector('ins')
-  console.log(chordTag)
+  const chordTag = document.querySelector('ins')
+  
   chordTag.setAttribute('chord', chord.value)
- 
+  
   await scales_chords_api_onload()
 
 }
