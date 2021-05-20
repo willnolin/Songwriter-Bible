@@ -156,24 +156,26 @@ function removeSongs() {
 //===================LYRICS===========================//
 // //API call
 const getLyrics = async (song, artistName) => {
+  const loader = `<div class="loading"></div>`
   try {
+    console.log(loader)
+    modalInnerDiv.innerHTML = loader
+    // loader.style.display = "block"
     // const url = ("https://api.lyrics.ovh/v1/queen/bohemian rhapsody")
     const lyric_url = (`https://api.lyrics.ovh/v1/${artistName}/${song}`) 
     // const url = (`https://api.lyrics.ovh/v1/${artist}`)
     // const res = await axios.get(lyric_url, { timeout: 20000 })
     const res = await axios.get(lyric_url, { timeout: 20000 })
-    while (res.timeout) {
-      const animateLoad = document.querySelector('.load')
-      animateLoad.style.display = "block"
-    }
+    
     const obj = res.data
     console.log(obj)
     const lyrics = res.data.lyrics
- 
+    modalInnerDiv.innerHTML = ""
     displayLyrics(lyrics)
     
   } catch (error) {
     console.error(error)
+    modalInnerDiv.innerHTML = ""
     noResultsPTag.textContent = `We are unable to display these lyric results at this time..They may be unavailable.  Apologies for the inconvenience`
     modalInnerDiv.appendChild(noResultsPTag)
   }

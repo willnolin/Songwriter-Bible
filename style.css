@@ -145,23 +145,6 @@ textarea {
   /* border: 1px solid #888; */
   width: 80%;
 }
-/* The animation code */
-@keyframes example {
-  0%   {background-color: red;}
-  25%  {background-color: yellow;}
-  50%  {background-color: blue;}
-  100% {background-color: green;}
-}
-
-/* The element to apply the animation to */
-div.load {
-  display: "none";
-  width: 100px;
-  height: 100px;
-  background-color: red;
-  animation-name: example;
-  animation-duration: 4s;
-}
 
 #inside-modal{
   max-width: 350px;
@@ -418,4 +401,48 @@ div.load {
     /* tail */
     right: -14px;
   }
+}
+/* -------loading----------*/
+.loading {
+    display: "none";
+    width: 30px;
+    height: 30px;
+    background-color: rgb(149, 157, 81);
+    position: relative;
+    margin-left: 55px;
+    border-radius: 100px;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    transition: 1s;
+}
+@keyframes example {
+  0%   {
+    background-color: rgb(199, 148, 101);
+    left: 0px
+  }
+  17%  {
+    background-color: rgb(199, 148, 101);
+    left: 75px
+  }
+  34%  {
+    background-color: rgb(199, 148, 101);
+    left: 150px}
+  50% {
+    background-color: rgb(191, 182, 88);
+    left: 225px;
+  }
+  67%  {
+    background-color: rgb(199, 148, 101);
+    left: 150px
+  }
+  84%  {
+    background-color: rgb(196, 166, 103);
+    left: 75px
+  }
+  100%  {
+    background-color: rgb(191, 182, 88);
+    left: 0px
+  }
+
 }
