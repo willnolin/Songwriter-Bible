@@ -152,12 +152,12 @@ https://www.scales-chords.com/api/
 | Display chord diagram in chord modal | H | 3hrs | 7hrs | 7hrs |
 | Add onclick event listener to each song | H | 3hrs | 2.5hrs | 2.5hrs |
 | Make API call for lyrics for each song | H | 3hrs| 3 hrs | 3hrs |
-| Display Lyrics in lyric modal | H | 3hrs| 2.5hrs | |
+| Display Lyrics in lyric modal | H | 3hrs| 2.5hrs | 2.5 hrs |
 | Style search container with flexbox | M | 3hrs | 2hrs | |
-| Style song results modal containers with flex | M | 3hrs | 3hrs | |
-| Style lyrics results modal | M | 3hrs | | |
-| Style chord results modal | M | 3hrs | | |
-| Style rhymes results modal | M | 3hrs | | |
+| Style song results modal containers with flex | M | 3hrs | 3hrs | 3hrs |
+| Style lyrics results modal | M | 3hrs | 3hrs | 3hrs |
+| Style chord results modal | M | 3hrs | 1hr | 1hr |
+| Style rhymes results modal | M | 3hrs | 1hr | 1hr |
 | Continue styling pages | L | 3hrs | | |
 | Deploy on Github Pages | H | 3hrs | | |
 | Total | H | 45hrs |  | |
@@ -171,4 +171,4 @@ Use this section to include a brief code snippet of functionality that you are p
 ```
 
 ## Change Log
- Use this section to document what changes were made and the reasoning behind those changes.  
+ THe embedding scripts proved to be challenging and didn't work as expected.  I ended up making an API call to the rhyme API instead of embedding it.  I manually added headings and link to RhymeBrain.com. 
