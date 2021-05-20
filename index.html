@@ -67,9 +67,25 @@
     
     </section>
     <section id="main-content">
-      <textarea id="writing-area">
+      <!-- <form class="text-form"> -->
+      <textarea id="writing-area"></textarea> 
+        
+      <section id="storage-buttons">  
+        
+        <button onclick="mySave()" class="save-button">Save</button>
+        
+        <button onclick="myLoad()" class="load-button">Load</button>
+      
+        <div id="message-area"></div>
+      </section>
+        
+      
+      <!-- <div id="save-bubble"><p>Click this to save your work 
+          <br> in case you close the browser</p></div>
+        
+        <div id="load-bubble"><p>Click this to reload your most recent save</p></div> -->
+      <!-- </form> -->
 
-      </textarea>
       <!-- <div class="loading">LOADING...</div> -->
       <!-- <button type="button" onclick="saveStaticDataToFile();">Click to Save</button> -->
       <!-- The Modal -->
@@ -90,5 +106,6 @@
 
     </section>
   </div>
+  <!-- <script src="js/FileSaver.js"></script> -->
 </body>
 </html>

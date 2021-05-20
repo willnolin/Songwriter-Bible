@@ -1,4 +1,3 @@
-// import { saveAs } from 'file-saver';
 //=============GLOBAL VARIABLES ====================//
 const BASE_URL = "http://www.songsterr.com/a/ra/songs.json?pattern="
 
@@ -35,7 +34,8 @@ const span = document.getElementsByClassName("close")[0];
 
 const noResultsPTag = document.createElement('p')
 
-// ====================== Event Listeners for buttons ======================//
+const loader = `<div class="loading"></div>`
+// ====================== Event Listeners for Forms ======================//
 // ===MODAL FUNCTIONALITY===//
 
 // When the user clicks the button, open the modal, fill MODAL with content
@@ -156,21 +156,20 @@ function removeSongs() {
 //===================LYRICS===========================//
 // //API call
 const getLyrics = async (song, artistName) => {
-  const loader = `<div class="loading"></div>`
+  
   try {
-    console.log(loader)
+    // console.log(loader)
     modalInnerDiv.innerHTML = loader
-    // loader.style.display = "block"
-    // const url = ("https://api.lyrics.ovh/v1/queen/bohemian rhapsody")
+  
     const lyric_url = (`https://api.lyrics.ovh/v1/${artistName}/${song}`) 
-    // const url = (`https://api.lyrics.ovh/v1/${artist}`)
-    // const res = await axios.get(lyric_url, { timeout: 20000 })
+   
     const res = await axios.get(lyric_url, { timeout: 20000 })
     
-    const obj = res.data
-    console.log(obj)
     const lyrics = res.data.lyrics
+    
+    //remove loader from the Modal
     modalInnerDiv.innerHTML = ""
+    
     displayLyrics(lyrics)
     
   } catch (error) {
@@ -252,11 +251,13 @@ function removeChords() {
 //=================Rhymes ===========//
 const getRhymes = async () => {
   try {
-
+    modalInnerDiv.innerHTML = loader
     const rhyme_url = (`https://rhymebrain.com/talk?function=getRhymes&word=${wordInput.value}&maxResults=30`)
     const res = await axios.get(rhyme_url, {timeout:10000})
     const data = res.data
-    console.log(data)
+    // console.log(data)
+    
+    modalInnerDiv.innerHTML = ""
     displayRhymes(data)
 
   } catch (error) {
@@ -305,3 +306,46 @@ function clearAll() {
   const chordTag = document.querySelector('ins')
   chordTag.innerHTML = ""
 }
+
+//------------local storage --------- */
+
+//----check if browser supports localstorage 
+function isSupportingStorage() {
+  try {
+      return 'localStorage' in window && window['localStorage'] !== null;
+  } catch (ex) {
+      return false;
+  }
+}
+
+// create prompts in div when hovering over buttons SAVE and LOAD (different messages)
+const messageArea = document.querySelector('#message-area')
+const saveBtn = document.querySelector('.save-button')
+const loadBtn = document.querySelector('.load-button')
+
+saveBtn.addEventListener('mouseover', () => {
+  messageArea.innerHTML = `Click to save your note in the browser.
+  <br>CAUTION: This will overwrite your previous save!`
+})
+
+saveBtn.addEventListener('mouseout', () => {
+  messageArea.textContent = ""
+})
+
+loadBtn.addEventListener('mouseover', () => {
+  messageArea.textContent = "Click to load your most recently saved note"
+})
+
+loadBtn.addEventListener('mouseout', () => {
+  messageArea.textContent = ""
+})
+
+function mySave() {
+  var myContent = document.getElementById("writing-area").value;
+  window.localStorage.setItem("myContent", myContent);
+}
+function myLoad() {
+  var myContent = window.localStorage.getItem("myContent");
+  document.getElementById("writing-area").value = myContent;
+}
+

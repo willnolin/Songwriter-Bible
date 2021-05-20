@@ -19,10 +19,10 @@ body {
   text-align:center;
 
   background: url(images/Open_book_bottom.jpeg) no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 
 }
 
@@ -110,24 +110,16 @@ li {
   background-color: rgba(0,0,0,0.4); 
   
 }
+
 ul {
   display: flex;
   flex-direction: column;
   justify-content: center
 }
+
 li {
  list-style-type: none;
 
-}
-
-textarea {
-  display:flex;
-  justify-content: center;
-  margin : 10px auto;
-  height: 300px;
-  width: 65%;
-  max-width: 500px;
-  border-radius: 10px;
 }
 
 /* Modal Content */
@@ -173,6 +165,28 @@ textarea {
   cursor: pointer;
 }
 /* ----------------- POP UP BUBBLES -------------------- */
+/* -----TEXT AREA -----------*/
+textarea {
+ 
+  display:flex;
+  justify-content: center;
+  margin : 10px auto;
+  height: 300px;
+  width: 65%;
+  max-width: 500px;
+  border-radius: 10px;
+}
+
+#message-area {
+  background-color: seashell;
+  max-width: 500px;
+  width:fit-content;
+  border-width: 5px;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+
+/*------bubble prompts in search container -------------- */
 .bubble {
   margin: 0 auto;
 }
@@ -360,7 +374,7 @@ textarea {
     right: -14px;
   }
 }
-/* ---- phpne screens ----------*/
+/* ---- phone screens ----------*/
 @media screen and (max-width: 540px) {
   h1 {
     font-size: 30px;
@@ -377,7 +391,7 @@ textarea {
 
   #hover-infoA::after { 
     /* tail */
-    right: -16px;
+    right: -14px;
   }
   /* --------------- ------------------ */
   #hover-infoB {
@@ -388,7 +402,7 @@ textarea {
   
   #hover-infoB::after { 
     /* tail */
-    right: -16px;
+    right: -14px;
   }
   /* ------------------------ */
   
@@ -414,7 +428,7 @@ textarea {
     animation-name: example;
     animation-duration: 4s;
     animation-iteration-count: infinite;
-    transition: 1s;
+    /* transition: 1s; */
 }
 @keyframes example {
   0%   {
