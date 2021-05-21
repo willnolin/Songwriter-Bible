@@ -1,7 +1,7 @@
 //=============GLOBAL VARIABLES ====================//
 //songterr
-const BASE_URL = "http://www.songsterr.com/a/ra/songs.json?pattern="
-const ARTIST_URL = "http://www.songsterr.com/a/ra/songs/byartists.json?artists="
+const BASE_URL = "https://www.songsterr.com/a/ra/songs.json?pattern="
+const ARTIST_URL = "https://www.songsterr.com/a/ra/songs/byartists.json?artists="
 
 const artist = document.querySelector('#artist') //<----artist input
 const artistForm = document.querySelector('.lyrics-form') // <----artist search button
