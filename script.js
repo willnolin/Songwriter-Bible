@@ -5,25 +5,15 @@ const ARTIST_URL = "http://www.songsterr.com/a/ra/songs/byartists.json?artists="
 
 const artist = document.querySelector('#artist') //<----artist input
 const artistForm = document.querySelector('.lyrics-form') // <----artist search button
-
-// const chord = document.querySelector('#chord') // <-----chord input
 const chordForm = document.querySelector('.chord-form')//<----chord search button
-const chordDiv = document.querySelector('#modal-chord-div') // <------chord div containing iframe
-
-// chordDiv.classList.add('chord-div')
+const chordDiv = document.querySelector('#modal-chord-div') // <------chord div containing diagram
 
 const wordInput = document.querySelector('#rhyme') // <-----word to rhyme input
 const rhymeForm = document.querySelector('.rhyme-form')//<----rhyme search button
-// const rhymesDiv = document.createElement('div')   // <------div containing rhymes
-// const brainURLTag = document.createElement('a')
-// p tag for lyrics
 const lyricsPTag = document.createElement('p.lyrics') // <----need to style, make space between lines consistent
-// lyricsPTag.classList.add('lyrics')
 
 const mainDiv = document.querySelector('#main-content')
-//ins tag for chord diagram
-// const chordTag = document.createElement('ins') // <------insert tag chord diagram
-// const chordTag = document.querySelector('ins')
+
 const placeholderMessage = `
     WELCOME TO SONGWRITER BIBLE!
 
@@ -43,7 +33,7 @@ textArea.setAttribute('placeholder', placeholderMessage)
 // Get the modal
 const modal = document.querySelector("#myModal");
 
-// get modal div tag within content div    !!!This is where you'll change text content, add images, whatever
+// get modal div tag within content div   
 const modalInnerDiv = document.querySelector("#inside-modal")
 
 // Get the <span> element that closes the modal
@@ -52,6 +42,7 @@ const span = document.getElementsByClassName("close")[0];
 const noResultsPTag = document.createElement('p')
 
 const loader = `<div class="loading"></div>`
+
 // ====================== Event Listeners for Forms ======================//
 // ===MODAL FUNCTIONALITY===//
 
@@ -108,7 +99,7 @@ const getArtistSongs = async () => {
     const url = (`${BASE_URL}${artist.value}`)
     const res = await axios.get(url)
     const data = res.data
-    console.log(data)
+
     if (data.length === 0) {   //check if results exist in database
       noResultsPTag.textContent = `Sorry, There are no results for ${artist.value}...`
       modalInnerDiv.append(noResultsPTag)
@@ -131,12 +122,12 @@ const displaySongs = (songs, artist) => {
 
   //loop through songs array forEach song
   songs.forEach(function (song) {
-   
+
     //get artist name for search
     const artistName = song.artist.name
     const songTitle = song.title
     const songTitleTag = document.createElement('li')
- 
+
     if (songTitle.includes(artistName) == false && songTitle.includes("-") == false) {
       songTitleTag.textContent = `${artistName}: ${song.title} `
 
@@ -149,7 +140,7 @@ const displaySongs = (songs, artist) => {
       })
       //append song titles to song list
       songList.append(songTitleTag)
-      //add songList as value inside text area
+
     }
 
   })
@@ -175,7 +166,7 @@ function removeSongs() {
 //===================LYRICS===========================//
 // //API call
 const getLyrics = async (song, artistName) => {
-  
+
   try {
     // console.log(loader)
     modalInnerDiv.innerHTML = loader
@@ -184,18 +175,18 @@ const getLyrics = async (song, artistName) => {
       artistName = artistName.replace("/", " ")
       console.log(artistName)
     }
-    
+
     const lyric_url = (`https://api.lyrics.ovh/v1/${artistName}/${song}`)
-    
+
     const res = await axios.get(lyric_url, { timeout: 20000 })
-    
+
     const lyrics = res.data.lyrics
-    
+
     //remove loader from the Modal
     modalInnerDiv.innerHTML = ""
-    
+
     displayLyrics(lyrics)
-    
+
   } catch (error) {
     console.error(error)
     modalInnerDiv.innerHTML = ""
@@ -210,8 +201,8 @@ function displayLyrics(lyrics) {
   //add lyrics into div
   lyricsPTag.textContent = `${lyrics}`
   lyricsPTag.style.whiteSpace = 'pre';
-  //append lyricsPTag to  Modal
 
+  //append lyricsPTag to  Modal
   modalInnerDiv.append(lyricsPTag)
 }
 
@@ -225,18 +216,15 @@ function removeLyrics() {
 // =============== CHORDS =======================//
 
 const displayChords = async () => {
-  // const chordDiv = document.querySelector('#modal-chord-div') // <------chord div containing
-  console.log(chordDiv)
-  // chordDiv.classList.add('chord-div')
-  
+
   const chord = document.querySelector('#chord') // <-----chord input
 
   const chordTag = document.querySelector('ins')
-  
+
   chordTag.setAttribute('chord', chord.value)
-  
+
   await scales_chords_api_onload()
-  
+
 
 }
 
@@ -246,41 +234,15 @@ function removeChords() {
   }
 }
 
-//===============Uber Chords ================//
-// const getUberChord = async () => {
-  
-//   const chordFrame = document.createElement('IFRAME')
-  
-//   try {
-//     // get the data from API
-//     const url = `https://api.uberchord.com/v1/embed/chords/${chord.value}#autosize`
-//     const res = await axios.get(url)
-//     //put HTML in srcdoc attribute of iframe
-//     chordFrame.setAttribute('srcdoc', res.data)
-//     //append to Modal
-//     modalInnerDiv.append(chordFrame)
-//   } catch (error) {
-//     console.error(error)
-//   }
-// }
-
-// const displayUberChord = () => {
-//   const chord_url = `https://api.uberchord.com/v1/chords/${chord.value}`
-
-//   console.log(chord_url)
-
-
-// }
-
 //=================Rhymes ===========//
 const getRhymes = async () => {
   try {
     modalInnerDiv.innerHTML = loader
     const rhyme_url = (`https://rhymebrain.com/talk?function=getRhymes&word=${wordInput.value}&maxResults=30`)
-    const res = await axios.get(rhyme_url, {timeout:10000})
+    const res = await axios.get(rhyme_url, { timeout: 10000 })
     const data = res.data
     // console.log(data)
-    
+
     modalInnerDiv.innerHTML = ""
     displayRhymes(data)
 
@@ -317,16 +279,12 @@ function removeRhymes() {
     modalInnerDiv.removeChild(modalInnerDiv.firstChild)
   }
 }
-  
+
 
 //clears all from Modal
-
 function clearAll() {
-  // while (modalInnerDiv.lastChild) {
-    // modalInnerDiv.removeChild(modalInnerDiv.lastChild)
-  // }
-  modalInnerDiv.innerHTML = ""
 
+  modalInnerDiv.innerHTML = ""
   const chordTag = document.querySelector('ins')
   chordTag.innerHTML = ""
 }
@@ -336,9 +294,9 @@ function clearAll() {
 //----check if browser supports localstorage 
 function isSupportingStorage() {
   try {
-      return 'localStorage' in window && window['localStorage'] !== null;
+    return 'localStorage' in window && window['localStorage'] !== null;
   } catch (ex) {
-      return false;
+    return false;
   }
 }
 
@@ -366,11 +324,11 @@ loadBtn.addEventListener('mouseout', () => {
 })
 
 function mySave() {
-  var myContent = document.getElementById("writing-area").value;
-  window.localStorage.setItem("myContent", myContent);
+  var content = document.getElementById("writing-area").value;
+  window.localStorage.setItem("content", content);
 }
 function myLoad() {
-  var myContent = window.localStorage.getItem("myContent");
-  document.getElementById("writing-area").value = myContent;
+  var content = window.localStorage.getItem("content");
+  document.getElementById("writing-area").value = content;
 }
 
