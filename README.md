@@ -153,22 +153,47 @@ https://www.scales-chords.com/api/
 | Add onclick event listener to each song | H | 3hrs | 2.5hrs | 2.5hrs |
 | Make API call for lyrics for each song | H | 3hrs| 3 hrs | 3hrs |
 | Display Lyrics in lyric modal | H | 3hrs| 2.5hrs | 2.5 hrs |
-| Style search container with flexbox | M | 3hrs | 2hrs | |
+| Style search container with flexbox | M | 3hrs | 2hrs | 2hrs |
 | Style song results modal containers with flex | M | 3hrs | 3hrs | 3hrs |
 | Style lyrics results modal | M | 3hrs | 3hrs | 3hrs |
 | Style chord results modal | M | 3hrs | 1hr | 1hr |
 | Style rhymes results modal | M | 3hrs | 1hr | 1hr |
-| Continue styling pages | L | 3hrs | | |
+| Continue styling pages | L | 3hrs | 4hrs | 4hrs |
 | Deploy on Github Pages | H | 3hrs | | |
 | Total | H | 45hrs |  | |
 
 ## Code Snippet
+ 
+This is how I pulled chord diagrams and sounds onto the DOM.  I used an embedded script.  The problem was that the script executes when the page loads.  So when the user tried to search for the chord, the information (and subsequently the generated <img> tag) was never generated.  The solution was to pull out the onload() function in the built in javascript code and execute it after the search button click event.
 
-Use this section to include a brief code snippet of functionality that you are proud of and a brief description.  
-
+Additionally I added the option to pull a chord sound from the API.  This is accomplished through a contional that checks for the substring "sound" in the user input.  User is instructed to optionally include this substring when searching. 
 ```
+const displayChords = async () => {
 
-```
+  const chord = document.querySelector('#chord') // <-----chord input
+  console.log(typeof chord.value)
+  if (chord.value.includes("sound")) { 
+    const chordTag = document.querySelector('ins')
+    chordTag.setAttribute('chord', chord.value)
+    chordTag.setAttribute('output', "sound")
+  }
+  else {
+    const chordTag = document.querySelector('ins')
+    chordTag.setAttribute('chord', chord.value)
+  }
+
+    await scales_chords_api_onload()
+
+}```
 
 ## Change Log
- THe embedding scripts proved to be challenging and didn't work as expected.  I ended up making an API call to the rhyme API instead of embedding it.  I manually added headings and link to RhymeBrain.com. 
+ 
+ The embedding scripts proved to be challenging and didn't work as expected.  I ended up making an API call to the rhyme API   instead of embedding it.  I manually added headings and link to RhymeBrain.com. 
+ 
+ I learned about keyframes and used them to create a css animation when loading..
+ 
+ I did not end up incorporating tablature links or album art.
+ 
+ 
+ 
+ 
