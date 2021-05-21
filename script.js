@@ -20,8 +20,9 @@ const placeholderMessage = `
   Use this area to jot down
   ideas, copy and paste rhymes,
   chords and inspirational lyrics.
-  Type 'sound' after the chord
-  name to listen to the chord.
+  When searching for a chord
+  above, type 'sound' after the
+  chord name to listen to the chord.
   Keep clicking 'save' to save
   this most recent note in the
   browser. When you're done,

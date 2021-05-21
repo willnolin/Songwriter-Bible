@@ -166,10 +166,9 @@ li {
   text-decoration: none;
   cursor: pointer;
 }
-/* ----------------- POP UP BUBBLES -------------------- */
 /* -----TEXT AREA -----------*/
 textarea {
- 
+  
   display:flex;
   justify-content: center;
   margin : 10px auto;
@@ -177,10 +176,12 @@ textarea {
   width: 65%;
   max-width: 500px;
   border-radius: 10px;
-
+  padding: 20px;
+  z-index:2;
+  
 }
 
-
+/* ----------------- POP UPs -------------------- */
 #message-area {
   background-color: seashell;
   max-width: 500px;

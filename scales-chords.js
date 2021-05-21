@@ -1,3 +1,5 @@
+/* This code was taken from https://www.scales-chords.com/ */ 
+
 function playAudio3(id_number) { var button = document.getElementById('playbut_' + id_number); button.style.background = "url('https://www.scales-chords.com/images/snd-mute-green-2.png') no-repeat"; button.style.backgroundSize = "100%"; var music = document.getElementById('music' + id_number); music.play(); }
 function audioStop(id_number) { var button = document.getElementById('playbut_' + id_number); button.style.background = "url('https://www.scales-chords.com/images/snd-play-green-2.png') no-repeat"; button.style.backgroundSize = "100%"; }
 function scales_chords_api_onload() {
@@ -58,4 +60,3 @@ function ajaxCall(url, params, successCallback, failCallback, ongoingCallback, c
   }
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"); xhr.send(paramString);
 }
-// https://www.scales-chords.com/chord-charts/guitar-Fm7-f-n-l-h-1-3-3-1-4-1.jpg
