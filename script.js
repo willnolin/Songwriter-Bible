@@ -20,6 +20,8 @@ const placeholderMessage = `
   Use this area to jot down
   ideas, copy and paste rhymes,
   chords and inspirational lyrics.
+  Type 'sound' after the chord
+  name to listen to the chord.
   Keep clicking 'save' to save
   this most recent note in the
   browser. When you're done,
@@ -168,8 +170,9 @@ function removeSongs() {
 const getLyrics = async (song, artistName) => {
 
   try {
-    // console.log(loader)
+    // load animation
     modalInnerDiv.innerHTML = loader
+    
     //check for AC/DC
     if (artistName.includes("/")) {
       artistName = artistName.replace("/", " ")
@@ -218,16 +221,21 @@ function removeLyrics() {
 const displayChords = async () => {
 
   const chord = document.querySelector('#chord') // <-----chord input
+  console.log(typeof chord.value)
+  if (chord.value.includes("sound")) { 
+    const chordTag = document.querySelector('ins')
+    chordTag.setAttribute('chord', chord.value)
+    chordTag.setAttribute('output', "sound")
+  }
+  else {
+    const chordTag = document.querySelector('ins')
+    chordTag.setAttribute('chord', chord.value)
+  }
 
-  const chordTag = document.querySelector('ins')
-
-  chordTag.setAttribute('chord', chord.value)
-
-  await scales_chords_api_onload()
-
+    await scales_chords_api_onload()
 
 }
-
+// remove chords
 function removeChords() {
   while (chordDiv.lastChild) {
     chordDiv.removeChild(chordDiv.lastChild)
@@ -279,7 +287,6 @@ function removeRhymes() {
     modalInnerDiv.removeChild(modalInnerDiv.firstChild)
   }
 }
-
 
 //clears all from Modal
 function clearAll() {

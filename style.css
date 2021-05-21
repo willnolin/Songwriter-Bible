@@ -503,6 +503,7 @@ footer {
   }
   textarea {
     height: 200px;
+    font-size:10px;
   }
   
   footer {
