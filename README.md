@@ -4,7 +4,7 @@ A tool to help write a song.
 
 ## Project Description
 
-This app will aid in the songwriting process.  Use will have the ability to look up a specific artist's song lyrics for inspiration, a chord diagram search, links to tabs if available and a rhyming dictionary.  Additionally there will br a text area to jot down ideas.
+This app will aid in the songwriting process.  Use will have the ability to look up a specific artist's song lyrics for inspiration, a chord diagram search and a rhyming dictionary.  Additionally there will br a text area to jot down ideas.
 
 ## API and Data Sample
 
