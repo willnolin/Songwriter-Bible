@@ -1,6 +1,6 @@
 # Songwriter-Bible
 A tool to help write a song.
-[Deployed Project]https://willnolin.github.io/songwriter-bible/
+[Deployed Project](https://willnolin.github.io/songwriter-bible/)
 
 
 ## Project Description
