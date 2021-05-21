@@ -30,6 +30,7 @@ const placeholderMessage = `
   you use to write down song ideas.
 
       Have Fun! Happy Writing!`
+
 const textArea = document.querySelector('#writing-area')
 textArea.setAttribute('placeholder', placeholderMessage)
 // Get the modal
@@ -41,8 +42,10 @@ const modalInnerDiv = document.querySelector("#inside-modal")
 // Get the <span> element that closes the modal
 const span = document.getElementsByClassName("close")[0];
 
+//to display errors
 const noResultsPTag = document.createElement('p')
 
+//tag for loading animation
 const loader = `<div class="loading"></div>`
 
 // ====================== Event Listeners for Forms ======================//
@@ -298,7 +301,7 @@ function clearAll() {
 
 //------------local storage --------- */
 
-//----check if browser supports localstorage 
+//----check if browser supports localstorage <----- Didn't implement this
 function isSupportingStorage() {
   try {
     return 'localStorage' in window && window['localStorage'] !== null;
@@ -330,11 +333,16 @@ loadBtn.addEventListener('mouseout', () => {
   messageArea.textContent = ""
 })
 
-function mySave() {
-  var content = document.getElementById("writing-area").value;
-  window.localStorage.setItem("content", content);
+function noteSave() {
+  if (isSupportingStorage()) {
+    var content = document.getElementById("writing-area").value;
+    window.localStorage.setItem("content", content);
+  }
+  else {
+    textArea.textContent = "Sorry.  Your browser does not support local storage"   
+  }
 }
-function myLoad() {
+function noteLoad() {
   var content = window.localStorage.getItem("content");
   document.getElementById("writing-area").value = content;
 }
