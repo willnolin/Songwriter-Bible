@@ -1,5 +1,7 @@
 //=============GLOBAL VARIABLES ====================//
+//songterr
 const BASE_URL = "http://www.songsterr.com/a/ra/songs.json?pattern="
+const ARTIST_URL = "http://www.songsterr.com/a/ra/songs/byartists.json?artists="
 
 const artist = document.querySelector('#artist') //<----artist input
 const artistForm = document.querySelector('.lyrics-form') // <----artist search button
@@ -22,7 +24,22 @@ const mainDiv = document.querySelector('#main-content')
 //ins tag for chord diagram
 // const chordTag = document.createElement('ins') // <------insert tag chord diagram
 // const chordTag = document.querySelector('ins')
+const placeholderMessage = `
+    WELCOME TO SONGWRITER BIBLE!
 
+  Use this area to jot down
+  ideas, copy and paste rhymes,
+  chords and inspirational lyrics.
+  Keep clicking 'save' to save
+  this most recent note in the
+  browser. When you're done,
+  copy and paste into your
+  text editor, notepad or whetever
+  you use to write down song ideas.
+
+      Have Fun! Happy Writing!`
+const textArea = document.querySelector('#writing-area')
+textArea.setAttribute('placeholder', placeholderMessage)
 // Get the modal
 const modal = document.querySelector("#myModal");
 
@@ -91,7 +108,7 @@ const getArtistSongs = async () => {
     const url = (`${BASE_URL}${artist.value}`)
     const res = await axios.get(url)
     const data = res.data
- 
+    console.log(data)
     if (data.length === 0) {   //check if results exist in database
       noResultsPTag.textContent = `Sorry, There are no results for ${artist.value}...`
       modalInnerDiv.append(noResultsPTag)
@@ -114,28 +131,30 @@ const displaySongs = (songs, artist) => {
 
   //loop through songs array forEach song
   songs.forEach(function (song) {
-
+   
     //get artist name for search
     const artistName = song.artist.name
+    const songTitle = song.title
     const songTitleTag = document.createElement('li')
-    console.log(artistName)
-    songTitleTag.textContent = song.title
+ 
+    if (songTitle.includes(artistName) == false && songTitle.includes("-") == false) {
+      songTitleTag.textContent = `${artistName}: ${song.title} `
 
-    //add event listener for each link
-    songTitleTag.addEventListener('click', function () {
+      //add event listener for each link
+      songTitleTag.addEventListener('click', function () {
 
-      removeSongs()
-      getLyrics(song.title, artistName)
+        removeSongs()
+        getLyrics(song.title, artistName)
 
-    })
-    //append song titles to song list
-    songList.append(songTitleTag)
-    //add songList as value inside text area
+      })
+      //append song titles to song list
+      songList.append(songTitleTag)
+      //add songList as value inside text area
+    }
+
   })
-
   //append song list to the div after for loop
   modalInnerDiv.appendChild(songList)
-
 }
 
 //sort the song titles in alphabetical order
@@ -160,9 +179,14 @@ const getLyrics = async (song, artistName) => {
   try {
     // console.log(loader)
     modalInnerDiv.innerHTML = loader
-  
-    const lyric_url = (`https://api.lyrics.ovh/v1/${artistName}/${song}`) 
-   
+    //check for AC/DC
+    if (artistName.includes("/")) {
+      artistName = artistName.replace("/", " ")
+      console.log(artistName)
+    }
+    
+    const lyric_url = (`https://api.lyrics.ovh/v1/${artistName}/${song}`)
+    
     const res = await axios.get(lyric_url, { timeout: 20000 })
     
     const lyrics = res.data.lyrics
@@ -320,6 +344,7 @@ function isSupportingStorage() {
 
 // create prompts in div when hovering over buttons SAVE and LOAD (different messages)
 const messageArea = document.querySelector('#message-area')
+
 const saveBtn = document.querySelector('.save-button')
 const loadBtn = document.querySelector('.load-button')
 

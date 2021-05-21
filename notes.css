@@ -1,0 +1,118 @@
+/*------------MEDIA QUERIES -------------- */
+@media screen and (max-width: 1350px) {
+  
+  #hover-infoA {
+    left:10%;
+  }
+  /* --------------- ------------------ */
+  #hover-infoB {
+    left:15%;  
+  }
+  
+  /* ------------------------ */
+  
+  #hover-infoC {
+    left:15%;
+  }
+  
+}
+/* -----ipad -----------*/
+@media screen and (max-width: 855px) {
+#hover-infoA {
+  left:50px;
+}
+/* --------------- ------------------ */
+#hover-infoB {
+  left:40px;  
+}
+
+/* ------------------------ */
+
+#hover-infoC {
+  left:40px;
+}
+
+
+}
+/* ------- phone less than 400px width -------*/
+
+@media screen and (max-width: 755px) {
+
+#hover-infoA {
+  top:105px;
+  left:50px;
+  font-size: 10px;
+}
+
+#hover-infoA::after { 
+  /* tail */
+  right: -16px;
+}
+/* --------------- ------------------ */
+#hover-infoB {
+  top: 160px;
+  left:40px; 
+  font-size: 10px;
+}
+
+#hover-infoB::after { 
+  /* tail */
+  right: -16px;
+}
+/* ------------------------ */
+
+#hover-infoC {
+  top: 213px;
+  left:40px;
+  font-size: 10px;
+}
+#hover-infoC::after { 
+  /* tail */
+  right: -14px;
+}
+}
+/* ---- phone screens ----------*/
+@media screen and (max-width: 540px) {
+textarea {
+  font-size: 12px;
+}
+h1 {
+  font-size: 30px;
+}
+
+label, input, button {
+  font-size:10px;
+}
+#hover-infoA {
+  top:55px;
+  left:5px;
+  font-size: 8px;
+}
+
+#hover-infoA::after { 
+  /* tail */
+  right: -14px;
+}
+/* --------------- ------------------ */
+#hover-infoB {
+  top: 105px;
+  left:5px; 
+  font-size: 8px;
+}
+
+#hover-infoB::after { 
+  /* tail */
+  right: -14px;
+}
+/* ------------------------ */
+
+#hover-infoC {
+  top: 150px;
+  left:5px;
+  font-size: 8px;
+}
+#hover-infoC::after { 
+  /* tail */
+  right: -14px;
+}
+}

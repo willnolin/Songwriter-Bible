@@ -17,7 +17,6 @@
 
 body {
   text-align:center;
-
   background: url(images/Open_book_bottom.jpeg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -41,9 +40,11 @@ h1 {
   /* text-shadow: 2px 2px  #888; */
 }
 #search-container {
+  position: relative;
   display:flex;
   flex-direction: column;
   justify-content: space-around;
+  /* align-items:center; */
   /* cssgradient.io */
   background: rgb(114,105,83);
   background: -moz-linear-gradient(90deg, rgba(114,105,83,0) 0%, rgba(114,105,83,1) 34%, rgba(114,105,83,1) 65%, rgba(114,105,80,0) 100%);
@@ -52,9 +53,12 @@ h1 {
   /* box-shadow: 0 0 2px 2px #76877dff; */
   border-radius: 10px;
   border-style: none;
+  /* margin: 0 auto; */
+  /* max-width: 50% */
 }
 
 label, input, button {
+  /* position:relative; */
   font-family: 'Gloria Hallelujah', cursive;
 }
 
@@ -68,7 +72,8 @@ label {
 }
 
 .row {
-  margin: 10px;
+  margin: 10px auto;
+
 }
 
 /* ---------- LABELS ---------------- */
@@ -78,15 +83,18 @@ strong {
   padding: auto */
 }
 #infoA  {
+  position:relative;
   cursor: pointer;
   
 }
 
 #infoB  {
+  position:relative;
   cursor: pointer;
 }
 
 #infoC {
+  position:relative;
   cursor: pointer;
 }
 
@@ -175,7 +183,9 @@ textarea {
   width: 65%;
   max-width: 500px;
   border-radius: 10px;
+
 }
+
 
 #message-area {
   background-color: seashell;
@@ -196,8 +206,8 @@ textarea {
 	display: "none";
   transition: 1s; 
   font-size: 15px;
-  top:90px;
-  left:100px;
+  top:-50px;
+  left: -250px;
   color: rgba(256,256,156,0);
   padding: 10px;
   border-radius: 60px;
@@ -240,8 +250,8 @@ textarea {
 	display: "none";
   transition: 1s; 
   font-size: 15px;
-  top:145px;
-  left:90px;
+  top: -50px;
+  left: -200px;
   color: rgba(256,256,156,0);
   padding: 10px;
   border-radius: 60px;
@@ -282,8 +292,8 @@ textarea {
 	display: "none";
   transition: 1s; 
   font-size: 15px;
-  top:200px;
-  left:90px;
+  top:-50px;
+  left: -200px;
   color: rgba(256,256,156,0);
   padding: 10px;
   border-radius: 60px;
@@ -317,105 +327,7 @@ textarea {
   color: rgb(0,0,0)
 }
 
-/* ------------MEDIA QUERIES --------------*/
 
-/* -----ipad -----------*/
-@media screen and (max-width: 855px) {
-  #hover-infoA {
-    left:50px;
-  }
-  /* --------------- ------------------ */
-  #hover-infoB {
-    left:40px;  
-  }
-  
-  /* ------------------------ */
-  
-  #hover-infoC {
-    left:40px;
-  }
-  
-  
-}
-/* ------- phone less than 400px width -------*/
-
-@media screen and (max-width: 755px) {
-
-  #hover-infoA {
-    top:105px;
-    left:50px;
-    font-size: 10px;
-  }
-
-  #hover-infoA::after { 
-    /* tail */
-    right: -16px;
-  }
-  /* --------------- ------------------ */
-  #hover-infoB {
-    top: 160px;
-    left:40px; 
-    font-size: 10px;
-  }
-  
-  #hover-infoB::after { 
-    /* tail */
-    right: -16px;
-  }
-  /* ------------------------ */
-  
-  #hover-infoC {
-    top: 213px;
-    left:40px;
-    font-size: 10px;
-  }
-  #hover-infoC::after { 
-    /* tail */
-    right: -14px;
-  }
-}
-/* ---- phone screens ----------*/
-@media screen and (max-width: 540px) {
-  h1 {
-    font-size: 30px;
-  }
-
-  label, input, button {
-    font-size:10px;
-  }
-  #hover-infoA {
-    top:55px;
-    left:5px;
-    font-size: 8px;
-  }
-
-  #hover-infoA::after { 
-    /* tail */
-    right: -14px;
-  }
-  /* --------------- ------------------ */
-  #hover-infoB {
-    top: 105px;
-    left:5px; 
-    font-size: 8px;
-  }
-  
-  #hover-infoB::after { 
-    /* tail */
-    right: -14px;
-  }
-  /* ------------------------ */
-  
-  #hover-infoC {
-    top: 150px;
-    left:5px;
-    font-size: 8px;
-  }
-  #hover-infoC::after { 
-    /* tail */
-    right: -14px;
-  }
-}
 /* -------loading----------*/
 .loading {
     display: "none";
@@ -459,4 +371,166 @@ textarea {
     left: 0px
   }
 
+}
+
+footer {
+  position:absolute;
+  bottom:0;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  left:0;
+  right:0
+}
+
+/* -----------------MEDIA QUERIES -----------------*/
+/*----TABLETS-----*/
+@media screen and (max-width:820px) {
+  #hover-infoA {
+    font-size: 11px;
+    top:-40px;
+    left: -175px;
+  }
+
+  #hover-infoA::after {
+    right: -16px;
+  }
+
+  #hover-infoB {
+    font-size: 13px;
+    top:-50px;
+    left: -165px;
+  }
+
+  #hover-infoB::after {
+    right: -16px;
+  }
+
+  #hover-infoC {
+    font-size: 13px;
+    top:-50px;
+    left: -165px;
+  }
+
+  #hover-infoC::after {
+    right: -16px;
+  }
+
+}
+/* ---- phone screens ----------*/
+@media screen and (max-width: 640px) {
+  textarea {
+    font-size: 12px;
+  }
+  h1 {
+    font-size: 30px;
+  }
+  
+  label, input, button {
+    font-size:10px;
+  }
+  #hover-infoA {
+    top: -30px;
+    left: -100px;
+    font-size: 7px;
+  }
+  
+  #hover-infoA::after { 
+    /* tail */
+    right: -12px;
+  }
+  /* --------------- ------------------ */
+  #hover-infoB { 
+    top: -30px;
+    left: -85px;
+    font-size: 8px;
+  }
+  
+  #hover-infoB::after { 
+    /* tail */
+    right: -12px;
+  }
+  /* ------------------------ */
+  
+  #hover-infoC {
+    top: -30px;
+    left: -85px;
+    font-size: 8px;
+  }
+  #hover-infoC::after { 
+    /* tail */
+    right: -12px;
+  }
+}
+@media screen and (max-width:420px){
+  #hover-infoA {
+    top: -30px;
+    left: -115px;
+    font-size: 7px;
+  }
+  
+  #hover-infoA::after { 
+    /* tail */
+    right: -12px;
+  }
+  /* --------------- ------------------ */
+  #hover-infoB { 
+    top: -30px;
+    left: -100px;
+    font-size: 8px;
+  }
+  
+  #hover-infoB::after { 
+    /* tail */
+    right: -12px;
+  }
+  /* ------------------------ */
+  
+  #hover-infoC {
+    top: -30px;
+    left: -100px;
+    font-size: 8px;
+  }
+  #hover-infoC::after { 
+    /* tail */
+    right: -12px;
+  }
+
+}
+@media screen and (max-width: 420px) {
+  #hover-infoA {
+    top: -30px;
+    left: -55px;
+    font-size: 7px;
+  }
+  
+  #hover-infoA::after { 
+    /* tail */
+    right: -12px;
+  }
+  /* --------------- ------------------ */
+  #hover-infoB { 
+    top: -30px;
+    left: -45px;
+    font-size: 8px;
+  }
+  
+  #hover-infoB::after { 
+    /* tail */
+    right: -12px;
+  }
+  /* ------------------------ */
+  
+  #hover-infoC {
+    top: -30px;
+    left: -45px;
+    font-size: 8px;
+  }
+  #hover-infoC::after { 
+    /* tail */
+    right: -12px;
+  }
+  textarea {
+    height: 200px;
+  }
 }
