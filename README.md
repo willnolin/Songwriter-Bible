@@ -136,8 +136,8 @@ https://www.scales-chords.com/api/
 |May 17| Project Approval / Core Application Structure (HTML,CSS. js) / API calls working properly | Complete
 |May 18| Pseudocode / actual code / functionality / MVP | Complete
 |May 19| Style Style Style / Start Post-MVP | Complete
-|May 20| Post-MVP| Incomplete
-|May 21| Presentations | Incomplete
+|May 20| Post-MVP| Partially Complete
+|May 21| Presentations | Complete
 
 ## Priority Matrix
 ![alt text](https://res.cloudinary.com/willnolin/image/upload/v1621275730/Songwriter-bible-matrix_plz7ju.png "priority matrix")
@@ -160,8 +160,8 @@ https://www.scales-chords.com/api/
 | Style chord results modal | M | 3hrs | 1hr | 1hr |
 | Style rhymes results modal | M | 3hrs | 1hr | 1hr |
 | Continue styling pages | L | 3hrs | 4hrs | 4hrs |
-| Deploy on Github Pages | H | 3hrs | | |
-| Total | H | 45hrs |  | |
+| Deploy on Github Pages | H | 3hrs | 2hrs | 2hrs|
+| Total | H | 45hrs | 42 hrs | 42hrs |
 
 ## Code Snippet
  
